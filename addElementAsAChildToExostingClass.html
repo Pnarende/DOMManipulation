@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Element as a Child to Existing Class Or Id</title>
+</head>
+<body>
+    
+    <h1>Add Element as a Child to Existing Class Or Id</h1>
+    <div id="first">
+        
+        <p id="firstpara">This is First paragraph in first ID</p>
+        <p id="last">This is Second paragraph in first ID</p>
+    </div>
+    <div id="second">
+        <p>This is First paragraph in Second ID</p>
+        <p>This is Second paragraph in Second ID</p>
+    </div>
+    <div class="Third">
+        <p>This is  First Paragraph in Third class</p>
+        <p id="Thirdsecond">This is Second Paragraph in Third class I  ....am Removing This paragraph ......!!!!!!!</p>
+    </div>
+    <script>
+        // Adding new element to second div..
+        let newElement = document.createElement("p");
+        newElement.innerText = "This is newly Added Third paragraph in div-2..";
+        let secondId = document.getElementById("second");
+        secondId.appendChild(newElement);
+
+        // Adding new element to first div...
+        let newElementInDiv1 = document.createElement("p");
+        newElementInDiv1.innerText = "This is Newly Added Third Element in first div-1....";
+        let parentId = document.getElementById("first");
+        parentId.appendChild(newElementInDiv1);
+
+        // Adding new element in class "Third"
+        let newElementInClassThird = document.createElement("p");
+        newElementInClassThird.innerText = "This is Newly Added Third Paragraph in class Third....";
+        let getParentClass = document.getElementsByClassName("Third")[0]; // Access the first element with the class "Third"
+        getParentClass.appendChild(newElementInClassThird);
+        //Insert Element Before another element
+        let insertingElement=document.createElement("p")
+        insertingElement.innerText="This is the new Inserting Element Before another Element......!!!!!"
+        let parent=document.getElementById("first")
+        parent.insertBefore(insertingElement,firstpara);
+        //How to Remove an Element 
+        let rem=document.getElementById("Thirdsecond")
+        rem.remove();
+         
+    </script>
+</body>
+</html>
